@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>ACE in Action</title>
+</head>
+
+<body>
+
+<div id="editor">
+<!--data goes here-->
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.8/ace.js" type="text/javascript" ></script>
+
+<script>
+    //import nodeJS fs module
+    // readFile function is defined.
+    const fs = require('fs');
+    /**
+     * find the js docs for this API on : https://ace.c9.io/#nav=howto
+     */
+    var editor = ace.edit("editor");
+    //do css work in js ( just like xml & java workout) using HTML DOM ApI : https://www.w3schools.com/whatis/whatis_htmldom.asp
+    document.getElementById("editor").style.height = "500px";
+
+    // all themes are available here : https://github.com/ajaxorg/ace/tree/master/lib/ace/theme
+    editor.setTheme("ace/theme/xcode");
+    editor.session.setMode("ace/mode/java");
+    editor.setHighlightActiveLine(true);
+    editor.setAutoScrollEditorIntoView(false);
+    editor.setReadOnly(false);
+    //read java src file using lambda interfaces
+    editor.insert("public class Trace{\n"+"};\n");
+  
+        
+</script>
+
+</body>
+
+</html>
